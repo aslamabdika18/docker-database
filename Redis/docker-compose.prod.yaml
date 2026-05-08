@@ -1,0 +1,19 @@
+services:
+  redis:
+    container_name: prod-redis
+    ports: !reset []
+    deploy:
+      resources:
+        limits:
+          memory: 256m
+          cpus: "0.25"
+    networks:
+      - redis_net
+
+  redisinsight:
+    profiles:
+      - dev-only
+
+networks:
+  redis_net:
+    driver: bridge

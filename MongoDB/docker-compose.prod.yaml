@@ -1,0 +1,23 @@
+services:
+  mongodb:
+    container_name: prod-mongodb
+    command: >
+      mongod
+      --wiredTigerCacheSizeGB 0.5
+      --quiet
+    ports: !reset []
+    deploy:
+      resources:
+        limits:
+          memory: 512m
+          cpus: "0.5"
+    networks:
+      - mongodb_net
+
+  mongo-express:
+    profiles:
+      - dev-only
+
+networks:
+  mongodb_net:
+    driver: bridge

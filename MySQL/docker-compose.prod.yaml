@@ -1,0 +1,23 @@
+services:
+  mysql:
+    container_name: prod-mysql
+    command: >
+      --innodb-buffer-pool-size=256M
+      --max-connections=100
+      --general-log=0
+    ports: !reset []
+    deploy:
+      resources:
+        limits:
+          memory: 512m
+          cpus: "0.5"
+    networks:
+      - mysql_net
+
+  phpmyadmin:
+    profiles:
+      - dev-only
+
+networks:
+  mysql_net:
+    driver: bridge

@@ -1,0 +1,10 @@
+# =============================================================
+# Environment files — contain real credentials, never commit
+# =============================================================
+**/.env
+
+# Keep example files in version control
+!**/.env.example
+
+# Claude Code local settings
+.claude/

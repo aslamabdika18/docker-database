@@ -1,0 +1,24 @@
+services:
+  postgres:
+    image: postgres:17-alpine
+    container_name: prod-postgres
+    command: >
+      postgres
+      -c max_connections=100
+      -c shared_buffers=256MB
+    ports: !reset []
+    deploy:
+      resources:
+        limits:
+          memory: 512m
+          cpus: "0.5"
+    networks:
+      - postgres_net
+
+  pgadmin:
+    profiles:
+      - dev-only
+
+networks:
+  postgres_net:
+    driver: bridge
