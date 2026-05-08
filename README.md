@@ -256,8 +256,8 @@ Contributions are welcome. Please follow the steps below to ensure a clean and r
 **Fork and clone:**
 
 ```bash
-git clone https://github.com/<your-username>/docker-databases.git
-cd docker-databases
+git clone https://github.com/<your-username>/docker-database.git
+cd docker-database
 ```
 
 **Create a branch using the naming convention below:**
