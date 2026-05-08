@@ -62,8 +62,8 @@ The following steps start a single database. Repeat from step 2 for any addition
 **1.** Clone this repository:
 
 ```bash
-git clone https://github.com/aslamabdika18/docker-databases.git
-cd docker-databases
+git clone https://github.com/aslamabdika18/docker-database.git
+cd docker-database
 ```
 
 **2.** Navigate to the folder for the database you want to run:
